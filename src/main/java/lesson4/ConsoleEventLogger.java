@@ -1,7 +1,11 @@
-package lesson1;
+package lesson4;
 
-public class ConsoleEventLogger {
+public class ConsoleEventLogger implements EventLogger{
     public void logEvent(String msg) {
         System.out.println(msg);
+    }
+
+    public void logEvent(Event event) {
+        System.out.println(event.toString());
     }
 }
