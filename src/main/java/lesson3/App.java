@@ -12,13 +12,28 @@ public class App {
         this.eventLogger = eventLogger;
     }
 
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public ConsoleEventLogger getEventLogger() {
+        return eventLogger;
+    }
+
+    public void setEventLogger(ConsoleEventLogger eventLogger) {
+        this.eventLogger = eventLogger;
+    }
+
     public static void main(String[] args) {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("springconfig.xml");
 
-        ConsoleEventLogger eventLoggerBean = (ConsoleEventLogger) ctx.getBean("eventLogger");
+        App appBean = (App) ctx.getBean("app");
 
-        eventLoggerBean.logEvent("Message number one");
-        eventLoggerBean.logEvent("Message number two");
-        eventLoggerBean.logEvent("Message number three");
+        appBean.getEventLogger().logEvent(appBean.getClient().getId() + " " + appBean.getClient().getName());
     }
+
 }
