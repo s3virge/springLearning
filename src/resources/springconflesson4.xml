@@ -3,18 +3,22 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="app" class="lesson4.App">
-        <constructor-arg ref="client"></constructor-arg>
-        <constructor-arg ref="eventLogger"></constructor-arg>
-    </bean>
-
     <bean id="client" class="lesson4.Client">
-        <!--<constructor-arg value="Hello from spring bean!"/>-->
         <constructor-arg index="0" value="1"/>
         <constructor-arg index="1" value="John Deer"/>
     </bean>
 
-    <!--<constructor-arg value="Hello from spring bean!"/>-->
     <bean id="eventLogger" class="lesson4.ConsoleEventLogger">
+    </bean>
+
+    <!--все бины спринг singltone
+    prototype каждый раз генерит новый бин-->
+    <bean id="event" class="lesson4.Event" scope="prototype">
+        <constructor-arg>
+            <bean class="java.util.Date"></bean>
+        </constructor-arg>
+        <constructor-arg>
+            <bean class="java.text.DateFormat" factory-method="getDateTimeInstance"></bean>
+        </constructor-arg>
     </bean>
 </beans>
