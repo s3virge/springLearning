@@ -29,7 +29,7 @@ public class App {
     }
 
     public static void main(String[] args) {
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("springconfig.xml");
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("springconflesson3.xml");
 
         App appBean = (App) ctx.getBean("app");
 

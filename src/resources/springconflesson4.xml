@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="app" class="lesson4.App">
+        <constructor-arg ref="client"></constructor-arg>
+        <constructor-arg ref="eventLogger"></constructor-arg>
+    </bean>
+
+    <bean id="client" class="lesson4.Client">
+        <!--<constructor-arg value="Hello from spring bean!"/>-->
+        <constructor-arg index="0" value="1"/>
+        <constructor-arg index="1" value="John Deer"/>
+    </bean>
+
+    <!--<constructor-arg value="Hello from spring bean!"/>-->
+    <bean id="eventLogger" class="lesson4.ConsoleEventLogger">
+    </bean>
+</beans>
