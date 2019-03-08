@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--suppress SpringFacetInspection -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="client" class="lesson5.Client">
+        <constructor-arg index="0" value="1"/>
+        <constructor-arg index="1" value="John Deer"/>
+    </bean>
+
+    <!--<bean id="consoleLogger" name="eventLogger" class="lesson5.ConsoleEventLogger"></bean>-->
+
+    <!--<bean id="fileLogger" name="eventLogger" class="lesson5.FileEventLogger" init-method="init">-->
+        <!--<constructor-arg value="lesson5.log"/>-->
+    <!--</bean>-->
+
+    <bean id="cacheFileLogger" name="eventLogger" class="lesson5.CacheFileEventLogger" >
+        <constructor-arg index="0" value="lesson5.log"/>
+        <constructor-arg index="1" value="5"/>
+    </bean>
+
+    <!--все бины спринг singltone
+    prototype каждый раз генерит новый бин-->
+    <bean id="event" class="lesson5.Event" scope="prototype">
+        <constructor-arg>
+            <bean class="java.util.Date"></bean>
+        </constructor-arg>
+        <constructor-arg>
+            <bean class="java.text.DateFormat" factory-method="getDateTimeInstance"></bean>
+        </constructor-arg>
+    </bean>
+
+
+</beans>
