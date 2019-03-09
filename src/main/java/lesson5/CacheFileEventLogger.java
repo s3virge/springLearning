@@ -26,4 +26,11 @@ public class CacheFileEventLogger extends FileEventLogger {
             super.logEvent(cache.get(c));
         }
     }
+
+    public void destroy() {
+        System.out.println("Destroy method was invoked");
+        if (!cache.isEmpty()) {
+            writeEventsFromCacheToFile();
+        }
+    }
 }
