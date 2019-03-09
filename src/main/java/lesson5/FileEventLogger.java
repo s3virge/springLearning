@@ -29,8 +29,11 @@ public class FileEventLogger implements EventLogger {
     public void init() throws IOException{
         this.logFile = new File(fileName);
 
+        // create new file if he is absent
+        FileUtils.touch(logFile);
+
         if (!logFile.canWrite()) {
-            System.out.println("File cannot be written.");
+            System.out.println(">>     Error! File cannot be written.    <<");
             throw new IOException();
         }
 
