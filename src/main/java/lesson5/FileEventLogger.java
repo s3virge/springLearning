@@ -30,7 +30,10 @@ public class FileEventLogger implements EventLogger {
         this.logFile = new File(fileName);
 
         if (!logFile.canWrite()) {
+            System.out.println("File cannot be written.");
             throw new IOException();
         }
+
+        System.out.println("FileEventLogger.init() was invoked");
     }
 }

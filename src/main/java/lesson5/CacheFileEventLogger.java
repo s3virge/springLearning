@@ -23,7 +23,6 @@ public class CacheFileEventLogger extends FileEventLogger {
 
     private void writeEventsFromCacheToFile() {
         for (int c = 0; c < cache.size(); c++) {
-//            super.logEvent(cache.get(c));
             super.logEvent(cache.get(c));
         }
     }
