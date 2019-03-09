@@ -6,7 +6,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class App {
 
     public static void main(String[] args) {
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("springconflesson5.xml");
+//        ApplicationContext ctx = new ClassPathXmlApplicationContext("springconflesson5.xml");
+        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("springconflesson5.xml");
 
         Client client = ctx.getBean("client", Client.class);
         EventLogger eventLogger = ctx.getBean("eventLogger", EventLogger.class);
@@ -16,5 +17,7 @@ public class App {
             Event event = ctx.getBean("event", Event.class);
             eventLogger.logEvent(event);
         }
+
+        ctx.close();
     }
 }

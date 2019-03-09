@@ -15,7 +15,7 @@
         <!--<constructor-arg value="lesson5.log"/>-->
     <!--</bean>-->
 
-    <bean id="cacheFileLogger" name="eventLogger" class="lesson5.CacheFileEventLogger" init-method="init">
+    <bean id="cacheFileLogger" name="eventLogger" class="lesson5.CacheFileEventLogger" init-method="init" destroy-method="destroy">
         <constructor-arg index="0" value="lesson5.log"/>
         <constructor-arg index="1" value="5"/>
     </bean>
