@@ -15,7 +15,7 @@
         <constructor-arg index="1" value="5"/>
     </bean>
 
-    <bean id="combinedEventLogger" class="lesson7.CombinedEvenLogger" >
+    <bean id="combinedEventLogger" class="lesson7.CombinedEventLogger" >
         <constructor-arg>
             <list>
                 <ref bean="consoleLogger"/>

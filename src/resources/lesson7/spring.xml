@@ -8,11 +8,22 @@
     <import resource="other.xml"/>
 
     <bean id="app" class="lesson7.App">
+        <constructor-arg ref="client"/>
+        <constructor-arg ref="cacheFileLogger"/>
         <constructor-arg>
             <map>
                 <entry key="INFO" value-ref="consoleLogger"/>
                 <entry key="ERROR" value-ref="combinedEventLogger"/>
             </map>
+        </constructor-arg>
+    </bean>
+
+    <bean id="combinedEventLogger" class="lesson7.CombinedEventLogger">
+        <constructor-arg>
+            <list>
+                <ref bean="consoleLogger"/>
+                <ref bean="fileLogger"/>
+            </list>
         </constructor-arg>
     </bean>
 

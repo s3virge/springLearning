@@ -13,6 +13,10 @@ public class Event {
         this.date = date; this.df = dateFormat;
     }
 
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
     public String toString() {
         return "id: " + id +
                 "\nmsg: " + msg +
