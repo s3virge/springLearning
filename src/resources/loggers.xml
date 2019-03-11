@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<!--suppress SpringFacetInspection -->
-=======
->>>>>>> 87b100f82a1c326937f78b09f846e0cd33069e46
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<<<<<<< HEAD
     <bean id="consoleLogger" class="app.ConsoleEventLogger"></bean>
 
     <bean id="fileLogger" class="app.FileEventLogger">
@@ -27,17 +22,5 @@
             </list>
         </constructor-arg>
     </bean>
-=======
-    <bean id="consoleLogger" class="lesson5.ConsoleEventLogger"></bean>
 
-    <bean id="fileLogger" class="lesson5.FileEventLogger">
-        <constructor-arg value="lesson5.log"/>
-    </bean>
-
-    <bean id="cacheFileLogger" name="eventLogger" class="lesson5.CacheFileEventLogger" init-method="init" destroy-method="destroy">
-        <constructor-arg index="0" value="lesson5.log"/>
-        <constructor-arg index="1" value="5"/>
-    </bean>
-
->>>>>>> 87b100f82a1c326937f78b09f846e0cd33069e46
 </beans>
