@@ -1,4 +1,4 @@
-package lesson7;
+package app;
 
 public class ConsoleEventLogger implements EventLogger {
     public void logEvent(String msg) {

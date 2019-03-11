@@ -1,4 +1,4 @@
-package lesson7;
+package app;
 
 import java.text.DateFormat;
 import java.util.Date;

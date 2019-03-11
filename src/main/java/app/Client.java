@@ -1,12 +1,17 @@
-package lesson1;
+package app;
 
 public class Client {
     private String id;
     private String name;
+    private String greeting;
 
     public Client(String id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    public void setGreeting(String greeting) {
+        this.greeting = greeting;
     }
 
     public String getId() {

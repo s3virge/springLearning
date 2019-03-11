@@ -1,4 +1,4 @@
-package lesson7;
+package app;
 
 public enum EventType {
     INFO,

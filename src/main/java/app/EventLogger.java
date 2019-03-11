@@ -1,4 +1,4 @@
-package lesson5;
+package app;
 
 public interface EventLogger {
     void logEvent(Event event);

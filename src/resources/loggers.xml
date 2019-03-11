@@ -4,15 +4,23 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="consoleLogger" class="lesson5.ConsoleEventLogger"></bean>
+    <bean id="consoleLogger" class="app.ConsoleEventLogger"></bean>
 
-    <bean id="fileLogger" class="lesson5.FileEventLogger">
-        <constructor-arg value="lesson5.log"/>
+    <bean id="fileLogger" class="app.FileEventLogger">
+        <constructor-arg value="app.log"/>
     </bean>
 
-    <bean id="cacheFileLogger" name="eventLogger" class="lesson5.CacheFileEventLogger" init-method="init" destroy-method="destroy">
-        <constructor-arg index="0" value="lesson5.log"/>
+    <bean id="cacheFileLogger" name="eventLogger" class="app.CacheFileEventLogger" init-method="init" destroy-method="destroy">
+        <constructor-arg index="0" value="app.log"/>
         <constructor-arg index="1" value="5"/>
     </bean>
 
+    <bean id="combinedEventLogger" class="app.CombinedEventLogger" >
+        <constructor-arg>
+            <list>
+                <ref bean="consoleLogger"/>
+                <ref bean="fileLogger"/>
+            </list>
+        </constructor-arg>
+    </bean>
 </beans>
