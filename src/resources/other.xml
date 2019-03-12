@@ -4,10 +4,21 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <!--spring bean for using properties files-->
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:client.properties</value>
+            </list>
+        </property>
+        <property name="ignoreResourceNotFound" value="true" />
+        <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+    </bean>
+
     <bean id="client" class="app.Client">
-        <constructor-arg index="0" value="1"/>
-        <constructor-arg index="1" value="John Deer"/>
-        <property name="greeting" value="Hello there!"/>
+        <constructor-arg index="0" value="${id}"/>
+        <constructor-arg index="1" value="${name}"/>
+        <property name="greeting" value="${greeting}"/>
     </bean>
 
     <!--все бины спринг singltone
