@@ -6,7 +6,7 @@
     <bean id="consoleLogger" class="app.ConsoleEventLogger"></bean>
 
     <bean id="fileLogger" class="app.FileEventLogger">
-        <constructor-arg value="app.log"/>
+        <constructor-arg value="target/app.log"/>
     </bean>
 
     <bean id="cacheFileLogger" name="eventLogger" class="app.CacheFileEventLogger" init-method="init" destroy-method="destroy">
